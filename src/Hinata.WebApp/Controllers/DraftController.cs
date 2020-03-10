@@ -127,6 +127,7 @@ namespace Hinata.Controllers
         {
             var draft = Mapper.Map<Draft>(model);
             draft.Author = LogonUser;
+            draft.Editor = LogonUser;
             draft.LastModifiedDateTime = DateTime.Now;
             await _draftDbCommand.SaveAsync(draft);
 
